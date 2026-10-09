@@ -1,0 +1,12 @@
+.catalogoEventos {
+    margin-inline: 80px;
+    padding-top: 75px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5%;
+    margin-block-end: 40px;
+
+}
