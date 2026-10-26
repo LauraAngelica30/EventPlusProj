@@ -3,11 +3,11 @@
     --branco: #ffffff;
     --cor-texto: #17143f;
     --vermelho: #b51d44;
-    --vermelho-escuro: #821b47;
+    --vermelho-escuro: #821B47;
     --azul-claro: rgba(0, 80, 251, 0.21);
 }
 
-.header {
+.header{
     border-bottom: 1px solid var(--cinza-claro);
     background: var(--branco);
 }
@@ -26,7 +26,7 @@
     width: 100px;
 }
 
-.header nav {
+.header nav{
     display: flex;
     gap: 28px;
 }
@@ -36,7 +36,7 @@
     text-decoration: none;
 }
 
-.header button {
+.header button{
     border: none;
     background: none;
     color: var(--cor-texto);

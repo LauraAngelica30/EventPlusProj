@@ -10,17 +10,9 @@ import CardEvento from "../../components/cardEvento/CardEvento";
 
 function Eventos() {
     const [eventos, setEventos] = useState<Evento[]>([])
-    // const [data, setData] = useState<Date>(new Date())
+
 
     useEffect(() => {
-        // const timerId = setInterval(() => {
-        //     setData(new Date());
-        // }, 1000)
-
-        // return () => {
-        //     clearInterval(timerId);
-        // };
-
         async function carregar() {
             const dados = await eventoService.listar();
 
@@ -28,28 +20,29 @@ function Eventos() {
         }
 
         void carregar();
-        
+
     }, [])
 
     return (
         <>
-        <Header/>
-        <main className="catalogoEventos">
-            <h1>Catálogo de eventos</h1>
-            {/* <p>{data.toLocaleString()}</p> */}
-            <div className="cards">
-                {eventos.map((evento) => (
-                    <CardEvento
-                    key={evento.idEvento}
-                    id={evento.idEvento}
-                    imagem={evento.imagemUrl}
-                    categoria={evento.idTipoEventoNavigation?.titulo}
-                    titulo={evento.nome}
-                    descricao={evento.descricao}/>
-                ))}
-            </div>
-        </main>
-        <Footer/>
+            <Header />
+            <main>
+                <div className="container-eventos">
+                    <h1>Catálogo de eventos</h1>
+                    <div className="eventos">
+                        {eventos.map((evento) => (
+                            <CardEvento
+                                key={evento.idEvento}
+                                id={evento.idEvento}
+                                imagem={evento.imagemUrl}
+                                categoria={evento.idTipoEventoNavigation?.titulo}
+                                titulo={evento.nome}
+                                descricao={evento.descricao} />
+                        ))}
+                    </div>
+                </div>
+            </main>
+            <Footer />
         </>
     )
 }

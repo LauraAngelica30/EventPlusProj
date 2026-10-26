@@ -1,12 +1,15 @@
-.catalogoEventos {
-    margin-inline: 80px;
-    padding-top: 75px;
+.container-eventos{
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.cards {
+.eventos{
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
-    gap: 5%;
-    margin-block-end: 40px;
-
+    flex-wrap: wrap;
+    gap: 50px;
 }
