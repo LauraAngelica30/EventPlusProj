@@ -9,9 +9,13 @@ interface CardEventoProps {
     categoria?: string;
     titulo: string;
     descricao: string;
+    emEdicao?: boolean;
+    onEditar?: () => void;
+    onExcluir?: () => void;
 }
 
-function CardEvento({id, imagem, categoria, titulo, descricao}: CardEventoProps) {
+function CardEvento({id, imagem, categoria, titulo, descricao, emEdicao, onEditar, onExcluir}: CardEventoProps) {
+    const adminstravel = Boolean(onEditar || onExcluir);
     return (
         <article className="home-evento-card">
             <img src={imagem || imagemPadrao} alt={`Imagem do evento ${titulo}`} />
@@ -19,7 +23,16 @@ function CardEvento({id, imagem, categoria, titulo, descricao}: CardEventoProps)
             <div className="home-evento-card-info">
                 <h3>{titulo}</h3>
                 <p>{descricao}</p>
-                <Link to={`/eventos/${id}`}>Ver evento</Link>
+                {adminstravel ? (
+                    <div>
+                    <Link to={`/eventos/${id}`}>Ver</Link>
+                    {emEdicao ? <p>Este evento está sendo editado.</p> : null}
+                    <button type="button" onClick={onEditar} aria-label={`Editar ${titulo}`}>Editar</button>
+                    <button type="button" onClick={onExcluir} aria-label={`Excluir ${titulo}`}>Excluir</button>
+                    </div>
+                ) : (
+                    <Link to={`/eventos/${id}`}>Ver evento</Link>
+                )}
             </div>
         </article>
     )

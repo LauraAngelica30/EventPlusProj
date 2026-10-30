@@ -7,6 +7,8 @@ import Login from "../pages/Login/Login";
 import Usuarios from "../pages/Usuarios/Usuarios";
 import TipoEventoPage from "../pages/TipoEvento/TipoEvento";
 import TipoUsuarioPage from "../pages/TipoUsuario/TipoUsuario";
+import CadastroEvento from "../pages/CadastroEvento/CadastroEvento";
+import ProtectedRoute from "./ProtectedRoute";
 
 function AppRoutes() {
     return(
@@ -21,7 +23,14 @@ function AppRoutes() {
 
             <Route path="/login" element={<Login/>}/>
 
-            <Route path="/usuarios" element={<Usuarios/>}/>
+            <Route path="/cadastroEvento" element={<CadastroEvento/>}/>
+
+            <Route path="/usuarios" element={
+                <ProtectedRoute role="administrador">
+                    <Usuarios/>
+                </ProtectedRoute>
+            }/>
+
 
             <Route path="/tipoUsuario" element={<TipoUsuarioPage/>} />
 

@@ -76,6 +76,16 @@ export interface UsuarioPayload{
     idTipoUsuario: string | null;
 }
 
+export interface EventoPayload {
+    nome: string;
+    descricao: string;
+    dataEvento: string;
+    arquivoImagem?: File | null;
+    imagemUrl?: string | null;
+    idTipoEvento?: string | null;
+    idInstituicao?: string | null;
+}
+
 export interface ComentarioPayload {
     descricao:string;
     idEvento: string;
