@@ -169,7 +169,7 @@ function DetalhesEvento() {
     return (
         <>
             <Header />
-            <main>
+            <main className="detalhes-eventos">
                 <img src={evento?.imagemUrl || imagemPadrao} alt="Banner do evento" />
                 <h1>{evento?.nome}</h1>
                 <div>

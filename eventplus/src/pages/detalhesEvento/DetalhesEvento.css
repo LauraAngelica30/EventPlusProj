@@ -1,0 +1,231 @@
+.detalhes-eventos {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: #222222;
+
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2.5rem 3.5rem;
+  align-items: start;
+}
+
+.detalhes-eventos > img {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.detalhes-eventos > h1 {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #111111;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.detalhes-eventos > div:nth-of-type(1) {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.detalhes-eventos > div:nth-of-type(1) > button {
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #444444;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.2s ease;
+  display: inline-block;
+  width: auto;
+}
+
+.detalhes-eventos > div:nth-of-type(1):not(:has(.detalhe-evento-comentarios)) > button:first-of-type,
+.detalhes-eventos > div:nth-of-type(1):has(.detalhe-evento-comentarios) > button:nth-of-type(2) {
+  background-color: #B52347;
+  color: #FFFFFF;
+}
+
+.detalhes-eventos > div:nth-of-type(1) > p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #444444;
+  text-align: justify;
+}
+
+.detalhe-evento-comentarios {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.detalhe-evento-comentarios form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #CCCCCC;
+  padding-bottom: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.detalhe-evento-comentarios form input,
+.detalhe-evento-comentarios form input[type="text"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0.6rem 2.5rem 0.6rem 0;
+  font-size: 0.95rem;
+  background: transparent;
+  color: #333333;
+}
+
+.detalhe-evento-comentarios form input::placeholder {
+  color: #999999;
+}
+
+.detalhe-evento-comentarios form button[type="submit"] {
+  position: absolute;
+  right: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detalhe-evento-comentarios form button[type="submit"] img {
+  width: 18px;
+  height: 18px;
+}
+
+.detalhe-evento-comentario {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.detalhe-evento-comentario strong {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #222222;
+}
+
+.detalhe-evento-comentario time {
+  font-size: 0.8rem;
+  color: #888888;
+  margin-left: 0.5rem;
+}
+
+.detalhe-evento-comentario p {
+  font-size: 0.9rem;
+  color: #555555;
+  margin-top: 0.35rem;
+  line-height: 1.5;
+}
+
+.detalhe-evento-mensagem {
+  font-size: 0.85rem;
+  color: #B52347;
+  margin-top: -0.5rem;
+}
+
+.detalhes-eventos > div:nth-of-type(2) {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.detalhes-eventos > div:nth-of-type(2) h2 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #111111;
+  margin: 0;
+}
+
+.detalhes-eventos > div:nth-of-type(2) hr {
+  border: none;
+  height: 2px;
+  background-color: #B52347;
+  margin: 0.4rem 0 1.5rem 0;
+  width: 100%;
+}
+
+.detalhes-eventos > div:nth-of-type(2) > div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+.detalhes-eventos > div:nth-of-type(2) > div img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.detalhes-eventos > div:nth-of-type(2) > div span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333333;
+}
+
+.detalhes-eventos > div:nth-of-type(2) button {
+  width: 100%;
+  background-color: #B52347;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.detalhes-eventos > div:nth-of-type(2) button:hover {
+  background-color: #961B39;
+}
+
+.detalhes-eventos > div:nth-of-type(2) button:disabled {
+  background-color: #D67A90;
+  cursor: not-allowed;
+}
+
+.detalhe-evento-cancelar {
+  background-color: #555555 !important;
+}
+
+.detalhe-evento-cancelar:hover {
+  background-color: #333333 !important;
+}
+
+@media (max-width: 850px) {
+  .detalhes-eventos {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .detalhes-eventos > div:nth-of-type(1) {
+    grid-column: 1 / -1;
+  }
+
+  .detalhes-eventos > div:nth-of-type(2) {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+  }
+}
